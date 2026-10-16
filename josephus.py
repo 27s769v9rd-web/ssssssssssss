@@ -14,6 +14,7 @@ class CircularList(object):
       if not self.head:
           self.head = new_link
           new_link.next = self.head
+	
   # Find the Link with the given data (value)
   # or return None if the data is not there
   def find ( self, data ):
