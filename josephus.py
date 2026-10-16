@@ -1,15 +1,19 @@
 import sys
 
 class Link(object):
-
-
+    def __init__(self, data, next_link=None):
+        self.data = data
+        self.next = next_link
 class CircularList(object):
   # Constructor
   def __init__ ( self ):
-
+      self.head = None
   # Insert an element (value) in the list
   def insert ( self, data ):
-
+      new_link = Link(data)
+      if not self.head:
+          self.head = new_link
+          new_link.next = self.head
   # Find the Link with the given data (value)
   # or return None if the data is not there
   def find ( self, data ):
