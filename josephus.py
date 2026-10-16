@@ -10,7 +10,7 @@ Date Last Modified: 10/15/2026
 """
 import sys
 
-class Link(object):
+class Link:
     """
     A node in the linked list
     """
@@ -18,7 +18,7 @@ class Link(object):
         self.data = data
         self.next = next_link
 
-class CircularList(object):
+class CircularList:
     """
     A circular linked list
     """
@@ -27,6 +27,9 @@ class CircularList(object):
         self.head = None
     # Insert an element (value) in the list
     def insert(self, data):
+        """
+        inserts an element in the list
+        """
         new_link = Link(data)
         if not self.head:
             self.head = new_link
@@ -90,6 +93,9 @@ class CircularList(object):
     # Return the data of the deleted Link AND return the
     # next Link after the deleted Link in that order
     def delete_after(self, start, n):
+        """
+        Deletes the nth link starting from the start link
+        """
         current = self.find(start)
         if not current:
             return None, None
@@ -120,6 +126,9 @@ class CircularList(object):
         return res
 
 def main():
+    """
+    main
+    """
     # read number of soldiers
     line = sys.stdin.readline()
     if not line:
