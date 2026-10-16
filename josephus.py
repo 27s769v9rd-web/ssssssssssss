@@ -1,11 +1,27 @@
+"""
+File: josephus.py
+Description: Solves Josephus problem with linked list
+Student Name: Jeff Zheng
+Student UT EID: jrz554
+Course Name: CS 313E
+Unique Number: 64150
+Date Created: 10/15/2026
+Date Last Modified: 10/15/2026
+"""
 import sys
 
 class Link(object):
+    """
+    A node in the linked list
+    """
     def __init__(self, data, next_link=None):
         self.data = data
         self.next = next_link
 
 class CircularList(object):
+    """
+    A circular linked list
+    """
     # Constructor
     def __init__(self):
         self.head = None
@@ -24,6 +40,9 @@ class CircularList(object):
     # Find the Link with the given data (value)
     # or return None if the data is not there
     def find(self, data):
+        """
+        Finds and returns the link containing data
+        """
         if not self.head:
             return None
         current = self.head
@@ -38,6 +57,9 @@ class CircularList(object):
     # Delete a Link with a given data (value) and return the Link
     # or return None if the data is not there
     def delete(self, data):
+        """
+        Deletes the link containing the data and returns it
+        """
         if not self.head:
             return None
         current = self.head
@@ -81,6 +103,9 @@ class CircularList(object):
     # The format of the string will be the same as the __str__
     # format for normal Python lists
     def __str__(self):
+        """
+        returns a string representation of the circular linked list
+        """
         if not self.head:
             return "[]"
         res = "["
